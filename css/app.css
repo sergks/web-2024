@@ -1,0 +1,101 @@
+.logo {
+    width: 70px;
+}
+
+a:hover {
+    color: #fce000;
+}
+
+.row {
+    display: flex;
+}
+
+.between {
+    justify-content: space-between;
+}
+
+.vertical-center {
+    align-items: center;
+}
+
+body {
+    background-color: #eee;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+header {
+    background-color: #fff;
+    padding: 15px;
+}
+
+main {
+    margin-bottom: 25px;
+    padding: 15px;
+}
+
+footer {
+    background-color: #fff;
+    padding: 45px 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 0;
+    gap: 15px;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+}
+
+.list-products {
+    gap: 15px;
+}
+
+.product-item {
+    background-color: #fff;
+    padding: 15px;
+}
+
+.product-item img {
+    width: 100%;
+}
+
+.product-item .price {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.product-item .btn-cart {
+    background-color: #fce000;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.product-item .btn-cart:hover {
+    background-color: #d0ba02;
+    cursor: pointer;
+}
+
+.product-item h3 {
+    font-weight: normal;
+}
+
+.search input {
+    width: 300px;
+}
+
+.search input {
+    border: 2px #fce000 solid;
+    border-radius: 6px;
+}
+
+.search input {
+    padding: 10px 15px;
+}
