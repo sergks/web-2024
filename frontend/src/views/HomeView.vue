@@ -15,29 +15,30 @@ const products = [
     price: 3500,
     isSale: true
   },
-  {
-    id: 3,
-    name: 'Камера видеонаблюдения Xiaomi 3',
-    price: 2000,
-    isSale: true
-  },
-  {
-    id: 4,
-    name: 'Камера видеонаблюдения Xiaomi 4',
-    price: 1345,
-    isSale: false
-  }
+    {
+        id: 3,
+        name: 'Камера видеонаблюдения Samsung 2',
+        price: 3500,
+        isSale: true
+    },
+    {
+        id: 4,
+        name: 'Камера видеонаблюдения Samsung 2',
+        price: 3500,
+        isSale: true
+    }
 ]
 </script>
 
 <template>
-  <Carousel />
+
+  <Carousel></Carousel>
 
   <h1>Каталог товаров</h1>
 
   <section class="row list-products">
-    <div class="product-column" v-for="product in products">
-      <Product :product="product" />
+    <div class="product-column" v-for="item in products">
+        <Product :product="item" />
     </div>
   </section>
 </template>
