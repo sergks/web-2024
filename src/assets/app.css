@@ -1,3 +1,7 @@
+.wrap {
+    min-height: calc(100vh - 112px);
+}
+
 .logo {
     width: 70px;
 }
@@ -37,6 +41,10 @@ main {
     margin-top: 15px;
     margin-bottom: 25px;
     padding: 0 15px;
+}
+
+.p-15 {
+    padding: 15px;
 }
 
 footer {
@@ -308,6 +316,7 @@ nav a {
     position: absolute;
     background-color: #fff;
     padding: 15px;
+    z-index: 100;
 }
 
 .search .search-result li {
