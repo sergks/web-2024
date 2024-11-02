@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+
+    <section class="login-form">
+        <h1>Авторизация</h1>
+        <br/>
+        <form>
+            <div class="form-item">
+                <input name="login" type="text" placeholder="Логин">
+                <div class="error"></div>
+            </div>
+            <div class="form-item has-error">
+                <input name="password" type="password" placeholder="Пароль">
+                <div class="error">Неверный логин или пароль.</div>
+            </div>
+            <br/>
+            <div class="form-item">
+                <button class="btn-login">Войти</button>
+            </div>
+        </form>
+    </section>
+
+</body>
+</html>
