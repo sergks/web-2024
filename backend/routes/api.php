@@ -14,8 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('catalog/top', [\App\Http\Controllers\CatalogController::class, 'top']);
-Route::get('catalog/{id}', [\App\Http\Controllers\CatalogController::class, 'info']);
-Route::get('catalog', [\App\Http\Controllers\CatalogController::class, 'index']);
+Route::prefix('catalog')->group(function () {
+    Route::get('top', [\App\Http\Controllers\CatalogController::class, 'top']);
+    Route::get('{id}', [\App\Http\Controllers\CatalogController::class, 'info']);
+    Route::get('', [\App\Http\Controllers\CatalogController::class, 'index']);
+    Route::post('', [\App\Http\Controllers\CatalogController::class, 'create']);
+});
 
-Route::get('categories', [\App\Http\Controllers\CategoryController::class, 'index']);
+Route::prefix('categories')->group(function () {
+    Route::get('', [\App\Http\Controllers\CategoryController::class, 'index']);
+    Route::get('{id}', [\App\Http\Controllers\CategoryController::class, 'info']);
+});

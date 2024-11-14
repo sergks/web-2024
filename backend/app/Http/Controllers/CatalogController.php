@@ -2,29 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Services\CatalogService;
+use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
-    public function index()
+    public function index(CatalogService $service)
     {
-        return Product::query()
-            ->get();
+        return $service->getProducts();
     }
 
-    public function info($id)
+    public function info($id, CatalogService $service)
     {
-        return Product::query()
-            ->where('id', $id)
-            ->first();
+        return $service->getProductById($id);
     }
 
-    public function top()
+    public function top(CatalogService $service)
     {
-        return Product::query()
-            ->where('active', true)
-            ->limit(4)
-            ->orderByDesc('created_at')
-            ->get();
+        return $service->getTopProducts(6);
+    }
+
+    public function create(Request $request, CatalogService $service)
+    {
+        $fields = $request->validate([
+            'name' => 'required|string|min:5',
+            'price' => 'required|numeric'
+        ]);
+
+        return $service->create($fields);
     }
 }

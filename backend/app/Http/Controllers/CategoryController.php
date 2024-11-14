@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Services\CategoryService;
 
 class CategoryController extends Controller
 {
-    public function index()
+    public function index(CategoryService $service)
     {
-        return Category::query()
-            ->get();
+        return $service->getCategories();
+    }
+
+    public function info($id, CategoryService $service)
+    {
+        return $service->getCategoryById($id);
     }
 }
