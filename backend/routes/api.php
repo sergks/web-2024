@@ -17,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('catalog/top', [\App\Http\Controllers\CatalogController::class, 'top']);
 Route::get('catalog/{id}', [\App\Http\Controllers\CatalogController::class, 'info']);
 Route::get('catalog', [\App\Http\Controllers\CatalogController::class, 'index']);
+
+Route::get('categories', [\App\Http\Controllers\CategoryController::class, 'index']);

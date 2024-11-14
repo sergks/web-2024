@@ -1,5 +1,6 @@
 <?php
 
+namespace backend\public;
 $a = 10;
 $b = '1abs';
 $c = $a + (int)$b;
@@ -29,7 +30,7 @@ class User
     }
 }
 
-$user = new User('Иван', 22);
+$user = new \backend\public\User('Иван', 22);
 $user->addLang('ru');
 $user->addLang('en');
 
