@@ -1,4 +1,13 @@
 <script setup>
+import {useRoute} from "vue-router";
+import axios from "axios";
+import {ref} from "vue";
+
+const id = useRoute().params.id
+const product = ref({})
+
+axios.get('products/' + id)
+    .then((response) => product.value = response.data)
 
 </script>
 
@@ -9,7 +18,7 @@
         <img src="https://avatars.mds.yandex.net/get-mpic/2017233/img_id2997718704707434454.jpeg/450x600">
       </section>
       <section class="product-card-info">
-        <h1>Умная колонка Яндекс Станция Миди с Алисой на YandexGPT, черный, Zigbee</h1>
+        <h1>{{ product.name }}</h1>
 
         <div>Состояние товара: Новый</div>
         <ul class="state">
@@ -36,7 +45,7 @@
         <br/>
 
         <div class="product-card-price-container">
-          <div class="price">14 985 ₽</div>
+          <div class="price">{{ product.price }} ₽</div>
 
           <div class="delivery"><b>Послезавтра</b>, курьер Маркета, 0 ₽</div>
           <div class="delivery"><b>Послезавтра</b>, в пункт выдачи , 0 ₽</div>

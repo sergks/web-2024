@@ -1,33 +1,14 @@
 <script setup>
 import Product from "@/components/Catalog/Product.vue";
 import Carousel from "@/components/Carousel/Carousel.vue";
+import {ref} from "vue";
+import axios from "axios";
 
-const products = [
-  {
-    id: 1,
-    name: 'Камера видеонаблюдения Xiaomi 1',
-    price: 2841,
-    isSale: true
-  },
-  {
-    id: 2,
-    name: 'Камера видеонаблюдения Samsung 2',
-    price: 3500,
-    isSale: true
-  },
-    {
-        id: 3,
-        name: 'Камера видеонаблюдения Samsung 2',
-        price: 3500,
-        isSale: true
-    },
-    {
-        id: 4,
-        name: 'Камера видеонаблюдения Samsung 2',
-        price: 3500,
-        isSale: true
-    }
-]
+const products = ref([])
+
+axios.get('products/top')
+    .then((response) => products.value = response.data)
+
 </script>
 
 <template>

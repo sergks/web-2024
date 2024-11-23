@@ -1,48 +1,13 @@
 <script setup>
 import Product from "@/components/Catalog/Product.vue";
+import {ref} from "vue";
+import axios from "axios";
 
-const products = [
-  {
-    id: 1,
-    name: 'Камера видеонаблюдения Xiaomi 1',
-    price: 2841
-  },
-  {
-    id: 2,
-    name: 'Камера видеонаблюдения Samsung 2',
-    price: 3500
-  },
-  {
-    id: 3,
-    name: 'Камера видеонаблюдения Xiaomi 3',
-    price: 2000
-  },
-  {
-    id: 4,
-    name: 'Камера видеонаблюдения Xiaomi 4',
-    price: 1345
-  },
-  {
-    id: 1,
-    name: 'Камера видеонаблюдения Xiaomi 1',
-    price: 2841
-  },
-  {
-    id: 2,
-    name: 'Камера видеонаблюдения Samsung 2',
-    price: 3500
-  },
-  {
-    id: 3,
-    name: 'Камера видеонаблюдения Xiaomi 3',
-    price: 2000
-  },
-  {
-    id: 4,
-    name: 'Камера видеонаблюдения Xiaomi 4',
-    price: 1345
-  }
-]
+const products = ref([])
+
+axios.get('products')
+    .then((response) => products.value = response.data)
+
 </script>
 
 <template>
