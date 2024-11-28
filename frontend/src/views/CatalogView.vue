@@ -4,7 +4,6 @@ import {ref} from "vue";
 import axios from "axios";
 
 const products = ref([])
-
 axios.get('products')
     .then((response) => products.value = response.data)
 

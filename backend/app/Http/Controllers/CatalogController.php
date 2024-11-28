@@ -19,6 +19,7 @@ class CatalogController extends Controller
 
     public function top(CatalogService $service)
     {
+        sleep(3);
         return $service->getTopProducts(6);
     }
 
